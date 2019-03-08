@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
 
 using LYLStudio.Service.Data.EntityFramework;
@@ -22,7 +21,7 @@ namespace WebApp.Services
 
         public IEnumerable<T> SomethingSpecialMethod(Expression<Func<T, bool>> predicate)
         {
-            return this.FetchAll<T>().AsQueryable().Where(predicate);
+            return this.FetchList(predicate);
         }
     }
 }
