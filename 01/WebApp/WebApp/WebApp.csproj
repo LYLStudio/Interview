@@ -45,6 +45,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="LYLStudio.Core">
+      <HintPath>..\..\..\RefLibs\LYLStudio.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="LYLStudio.Core.Data">
+      <HintPath>..\..\..\RefLibs\LYLStudio.Core.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="LYLStudio.Core.Threading">
+      <HintPath>..\..\..\RefLibs\LYLStudio.Core.Threading.dll</HintPath>
+    </Reference>
+    <Reference Include="LYLStudio.Service.Data.EntityFramework">
+      <HintPath>..\..\..\RefLibs\LYLStudio.Service.Data.EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />

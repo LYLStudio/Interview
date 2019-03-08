@@ -5,6 +5,14 @@ VisualStudioVersion = 15.0.28307.438
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp", "WebApp\WebApp.csproj", "{7B362E72-1C5B-4385-9CF1-12B3975C3058}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RefLibs", "RefLibs", "{2359CFA8-31FE-43A7-9F69-3E349E6660D0}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\RefLibs\LYLStudio.Core.Data.dll = ..\..\RefLibs\LYLStudio.Core.Data.dll
+		..\..\RefLibs\LYLStudio.Core.dll = ..\..\RefLibs\LYLStudio.Core.dll
+		..\..\RefLibs\LYLStudio.Core.Threading.dll = ..\..\RefLibs\LYLStudio.Core.Threading.dll
+		..\..\RefLibs\LYLStudio.Service.Data.EntityFramework.dll = ..\..\RefLibs\LYLStudio.Service.Data.EntityFramework.dll
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
