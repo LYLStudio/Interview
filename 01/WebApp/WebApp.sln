@@ -13,6 +13,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RefLibs", "RefLibs", "{2359
 		..\..\RefLibs\LYLStudio.Service.Data.EntityFramework.dll = ..\..\RefLibs\LYLStudio.Service.Data.EntityFramework.dll
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp.Models", "WebApp.Models\WebApp.Models.csproj", "{24B151E8-55E1-4291-8B13-BF4C68BA5090}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,10 @@ Global
 		{7B362E72-1C5B-4385-9CF1-12B3975C3058}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B362E72-1C5B-4385-9CF1-12B3975C3058}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7B362E72-1C5B-4385-9CF1-12B3975C3058}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24B151E8-55E1-4291-8B13-BF4C68BA5090}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24B151E8-55E1-4291-8B13-BF4C68BA5090}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24B151E8-55E1-4291-8B13-BF4C68BA5090}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24B151E8-55E1-4291-8B13-BF4C68BA5090}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
