@@ -16,29 +16,28 @@ namespace WebApp.Controllers
 {
     public class ProductsController : ApiController
     {
-        private readonly IProductService<Product> _productService;
+        private readonly IProductService _productService;
 
         public ProductsController()
         {
-            _productService = new ProductService<Product>();
+            _productService = new ProductService();
         }
 
         // GET: api/Products
         public IQueryable<ProductInfo> GetProducts()
         {
-            var datas = (_productService as ProductService<Product>)
-                .FetchAll<Product>().AsQueryable()
+            var datas = _productService.GetProducts()
+                .AsQueryable()
                 .Select(x=> new ProductInfo() { ProductID = x.ProductID, ProductName = x.ProductName })
                 .OrderBy(o=>o.ProductID);
-            return datas.AsQueryable();
+            return datas;
         }
 
         // GET: api/Products/5
         [ResponseType(typeof(ProductInfo))]
         public IHttpActionResult GetProduct(int id)
         {
-            Product product = (_productService as ProductService<Product>)
-                .Fetch<Product>(id);
+            Product product = _productService.GetProduct(id);
             if (product == null)
             {
                 return NotFound();
@@ -52,5 +51,69 @@ namespace WebApp.Controllers
 
             return Ok(data);
         }
+
+        // PUT: api/Products/5
+        [ResponseType(typeof(void))]
+        public IHttpActionResult PutProduct(int id, ProductInfo product)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            if (id != product.ProductID)
+            {
+                return BadRequest();
+            }
+
+            var p = _productService.GetProduct(id);
+            
+            if(p == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                p.ProductName = product.ProductName;
+                _productService.UpdateProduct(p);
+            }
+           
+            return StatusCode(HttpStatusCode.NoContent);
+        }
+
+        // POST: api/Products
+        [ResponseType(typeof(ProductInfo))]
+        public IHttpActionResult PostProduct(ProductInfo product)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var p = new Product()
+            {
+                ProductID = product.ProductID,
+                ProductName = product.ProductName
+            };
+
+            _productService.CreateProduct(p);
+
+            return CreatedAtRoute("DefaultApi", new { id = product.ProductID }, product);
+        }
+
+        // DELETE: api/Products/5
+        [ResponseType(typeof(ProductInfo))]
+        public IHttpActionResult DeleteProduct(int id)
+        {
+            Product product = _productService.GetProduct(id);
+            if (product == null)
+            {
+                return NotFound();
+            }
+
+            _productService.DeleteProduct(id);
+
+            return Ok(new ProductInfo() { ProductID = product.ProductID, ProductName = product.ProductName });
+        }      
     }
 }
